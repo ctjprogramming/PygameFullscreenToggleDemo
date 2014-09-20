@@ -4,6 +4,7 @@ from inputs import Inputs
 from entity import Entity
 from render import render
 from display import update_display_mode, toggle_fullscreen
+from update import update
 
 globals.width = 640
 globals.height = 480
@@ -25,13 +26,15 @@ def main():
 
 	while(loop):
 		clock.tick(60) # tick the clock with a target 60 fps
+		globals.window.fill((255, 255, 255))
 
 		globals.inputs.update() # refresh inputs
 
+		update(entities) # update all entities
 		render(entities) # draw all entities
 
-		if(globals.inputs.K_SPACE): toggle_fullscreen() # space bar toggles fullscreen
-		if(globals.inputs.K_ESCAPE): loop = False # escape key exits game
+		if(globals.inputs.isKeyDown("space")): toggle_fullscreen() # space bar toggles fullscreen
+		if(globals.inputs.isKeyDown("escape")): loop = False # escape key exits game
 		if(globals.inputs.isQuitPressed()): loop = False # red 'x' button exits game
 
 		pygame.display.flip() # flip the display, which finally shows our render
