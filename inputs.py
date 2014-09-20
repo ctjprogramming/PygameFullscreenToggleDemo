@@ -3,7 +3,7 @@ import pygame
 class Inputs():
 
 	def __init__(self, pygame):
-
+		# each hey is assigned a boolean for reference by game modules
 		self.pygame = pygame
 		self.up = False
 		self.down = False
