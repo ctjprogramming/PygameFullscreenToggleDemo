@@ -1,6 +1,8 @@
 PygameFullscreenToggleDemo by Grayson Pike, September 19th, Year of Our Lord 2014
 
 - Toggle fullscreen with the space bar
+- Move with the arrow keys
+- Exit with escape
 
 Changelog:
 
@@ -8,4 +10,9 @@ Changelog:
     Original Upload
     
   1.1:
-    Added Comments
+    Added comments
+    Generally fixed some silly things
+    
+  1.2:
+    Added update function for entities, separate from draw/render
+    Improved inputs module, corrected references in other modules to use isKeyDown()
